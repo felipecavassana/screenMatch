@@ -1,3 +1,5 @@
+package com.felipecavassana.screenmatch.main;
+
 import com.felipecavassana.screenmatch.calculations.CalculatorTime;
 import com.felipecavassana.screenmatch.calculations.RecommendationFilter;
 import com.felipecavassana.screenmatch.model.Episode;

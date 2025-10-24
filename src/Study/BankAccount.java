@@ -1,16 +1,18 @@
 package Study;
 
 public class BankAccount {
-    private String numberAccount;
-    protected double balance;
     public String name;
+    private int numberAccount;
+    protected double balance;
 
-    public String getNumberAccount() {
-        return numberAccount;
+    public BankAccount(String name, int numberAccount, double balance) {
+        this.name = name;
+        this.numberAccount = numberAccount;
+        this.balance = balance;
     }
 
-    public void setNumberAccount(String numberAccount) {
-        this.numberAccount = numberAccount;
+    public int getNumberAccount() {
+        return numberAccount;
     }
 
     public double getBalance() {

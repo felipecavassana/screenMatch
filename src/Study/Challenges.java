@@ -99,9 +99,12 @@ public class Challenges {
         System.out.println("Cart size: "+ productArrayList.size());
         System.out.println("First product: "+ productArrayList.getFirst().getName());
 
+        double totalCartAmount = 0;
         for (Product product : productArrayList){
             System.out.println(product);
+            totalCartAmount += product.getPrice();
         }
+        System.out.println(String.format("Cart average: $ %.2f", totalCartAmount/ productArrayList.size()));
 
         System.out.println("*** [END] ***\n");
 
@@ -120,6 +123,10 @@ public class Challenges {
         dog.abanarRabo();
         dog.makeSound();
 
+        if (dog instanceof Animal animal){
+            animal.makeSound();
+        }
+
         Cat cat = new Cat();
         cat.arranharMoveis();
         cat.makeSound();
@@ -128,8 +135,7 @@ public class Challenges {
 
         // BankAccount
         System.out.println("\n*** [BANK ACCOUNT] ***");
-        CurrentAccount account = new CurrentAccount();
-        account.setBalance(1000);
+        CurrentAccount account = new CurrentAccount("Conta Inicial", 123321, 1000);
         account.consultarSaldo();
 
         account.depositar(200);
@@ -139,6 +145,26 @@ public class Challenges {
 
         account.sacar(120);
         account.consultarSaldo();
+
+        CurrentAccount account1 = new CurrentAccount("Conta 1", 123331, 500);
+        CurrentAccount account2 = new CurrentAccount("Conta 2", 123332, 501);
+        CurrentAccount account3 = new CurrentAccount("Conta 3", 123333, 3003);
+        CurrentAccount account4 = new CurrentAccount("Conta 4", 123334, 1500);
+
+        ArrayList<CurrentAccount> accountArrayList = new ArrayList<>();
+        accountArrayList.add(account);
+        accountArrayList.add(account1);
+        accountArrayList.add(account2);
+        accountArrayList.add(account3);
+        accountArrayList.add(account4);
+
+        CurrentAccount biggestBalance = accountArrayList.getFirst();
+        for (CurrentAccount currentAccount : accountArrayList){
+            if (currentAccount.getBalance() > biggestBalance.getBalance()){
+                biggestBalance = currentAccount;
+            }
+        }
+        System.out.println("Conta com maior saldo - Número "+ biggestBalance.getNumberAccount() +", Saldo: $ "+ biggestBalance.getBalance());
         System.out.println("*** [END] ***\n");
 
 
@@ -170,6 +196,26 @@ public class Challenges {
         ConversorTemperatura conversorTemperatura = new ConversorTemperaturaPadrao();
         conversorTemperatura.celsiusParaFahrenheit(25);
         conversorTemperatura.fahrenheitParaCelsius(77);
+        System.out.println("*** [END] ***\n");
+
+        // Shapes
+        System.out.println("\n*** [SHAPE] ***");
+        Square square1 = new Square(3.5);
+        Square square2 = new Square(5);
+
+        Circle circle1 = new Circle(1);
+        Circle circle2 = new Circle(2.5);
+
+        ArrayList<Shape> shapeArrayList = new ArrayList<>();
+        shapeArrayList.add(square1);
+        shapeArrayList.add(square2);
+        shapeArrayList.add(circle1);
+        shapeArrayList.add(circle2);
+
+        for (Shape shape : shapeArrayList){
+            System.out.println("Área calculada: "+ shape.calculateArea());
+        }
+
         System.out.println("*** [END] ***\n");
     }
 }

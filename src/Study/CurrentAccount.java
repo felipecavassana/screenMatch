@@ -3,6 +3,10 @@ package Study;
 public class CurrentAccount extends BankAccount{
     private double tarifaMensal;
 
+    public CurrentAccount(String name, int numberAccount, double balance) {
+        super(name, numberAccount, balance);
+    }
+
     public void setTarifaMensal(double tarifaMensal) {
         this.tarifaMensal = tarifaMensal;
     }
