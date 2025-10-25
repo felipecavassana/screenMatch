@@ -1,4 +1,4 @@
-package Desafio.model;
+package DesafioS02.model;
 
 public class Music extends Audio{
     private String album;

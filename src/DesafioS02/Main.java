@@ -1,8 +1,8 @@
-package Desafio;
+package DesafioS02;
 
-import Desafio.model.Music;
-import Desafio.model.Podcast;
-import Desafio.model.Prefered;
+import DesafioS02.model.Music;
+import DesafioS02.model.Podcast;
+import DesafioS02.model.Prefered;
 
 public class Main {
     public static void main(String[] args) {

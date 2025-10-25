@@ -1,8 +1,6 @@
 package Study;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Challenges {
     public static void main(String[] args) {
@@ -217,5 +215,67 @@ public class Challenges {
         }
 
         System.out.println("*** [END] ***\n");
+
+
+        // Arrays
+        System.out.println("\n*** [Arrays] ***");
+
+        ArrayList<Integer> numberList =  new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            numberList.add(new Random().nextInt(100));
+        }
+        System.out.println("Before:\t"+ numberList);
+        Collections.sort(numberList);
+        System.out.println("After:\t"+ numberList);
+
+        System.out.println();
+
+        ArrayList<Title> titleArrayList = new ArrayList<>();
+        titleArrayList.add(new Title("Aleluia"));
+        titleArrayList.add(new Title("Paz"));
+        titleArrayList.add(new Title("Igreja"));
+        titleArrayList.add(new Title("Missa"));
+        System.out.println("Before:\t"+ titleArrayList);
+        Collections.sort(titleArrayList);
+        System.out.println("After:\t"+ titleArrayList);
+
+        System.out.println();
+
+        List<Integer> numberList1 =  new ArrayList<>();
+        List<Integer> numberList2 =  new LinkedList<>();
+
+        int numberAux;
+        for (int i = 0; i < 5; i++) {
+            numberAux = new Random().nextInt(100);
+            numberList1.add(numberAux);
+            numberList2.add(numberAux);
+        }
+        System.out.println("List:\t"+ numberList1.getClass());
+        System.out.println("Before:\t"+ numberList1);
+        Collections.sort(numberList1);
+        System.out.println("After:\t"+ numberList1);
+
+        System.out.println("List:\t"+ numberList2.getClass());
+        System.out.println("Before:\t"+ numberList2);
+        Collections.sort(numberList2);
+        System.out.println("After:\t"+ numberList2);
+
+        System.out.println();
+
+        List<String> stringListPoli;
+        stringListPoli = new ArrayList<>();
+        stringListPoli.add("Element 1");
+        stringListPoli.add("Element 2");
+        System.out.println("Polyform list:\t"+ stringListPoli.getClass());
+        System.out.println(stringListPoli);
+
+        stringListPoli = new LinkedList<>();
+        stringListPoli.add("Element A");
+        stringListPoli.add("Element B");
+        System.out.println("polyform list:\t"+ stringListPoli.getClass());
+        System.out.println(stringListPoli);
+
+        System.out.println("*** [END] ***\n");
+
     }
 }

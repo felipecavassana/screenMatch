@@ -1,6 +1,6 @@
 package com.felipecavassana.screenmatch.model;
 
-public class Title {
+public class Title implements Comparable<Title> {
     private String name;
     private int yearRelease;
     private boolean planIncluded;
@@ -67,5 +67,10 @@ public class Title {
 
     public double calculateMedia() {
         return ratingSum / totalRating;
+    }
+
+    @Override
+    public int compareTo(Title o) {
+        return this.getName().compareTo(o.getName());
     }
 }

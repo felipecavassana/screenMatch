@@ -42,6 +42,7 @@ public class Main {
         movie3.setPlanIncluded(true);
         movie3.evaluate(6.7);
 
+        // TVShow
         TVShow serie1 = new TVShow("Lost",2002);
         serie1.setEpisodesPerSeason(22);
         serie1.setMinutesPerEpisode(50);
@@ -58,6 +59,7 @@ public class Main {
 
         System.out.println(calculatorTime.getTotalTime());
 
+        // Episode
         Episode episode1 = new Episode();
         episode1.setNumber(1);
         episode1.setTvShow(serie1);

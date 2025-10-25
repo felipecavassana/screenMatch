@@ -5,6 +5,9 @@ import com.felipecavassana.screenmatch.model.TVShow;
 import com.felipecavassana.screenmatch.model.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Random;
 
 public class MainList {
     public static void main(String[] args) {
@@ -22,11 +25,24 @@ public class MainList {
         arrayList.add(movie3);
         arrayList.add(serie1);
 
+        Collections.sort(arrayList);
+
         for (Title title : arrayList){
             System.out.println(title);
             if (title instanceof Movie movie && movie.getClassification() > 2) {
                 System.out.println("Classificação: " + movie.getClassification());
             }
         }
+
+        arrayList.sort(Comparator.comparing(Title::getYearRelease));
+        System.out.println(arrayList);
+
+        ArrayList<String> namesArray = new ArrayList<>();
+        namesArray.add("Maria Beatriz");
+        namesArray.add("Patrícia");
+        namesArray.add("Felipe");
+        Collections.sort(namesArray);
+        System.out.println(namesArray);
+
     }
 }
