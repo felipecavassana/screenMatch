@@ -12,7 +12,7 @@ public class ExercisesRest {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner lecture = new Scanner(System.in);
         ApiRest apiRest = new ApiRest();
-        String googleApiKey = "AIzaSyDLOwG8f9eKL7EAp9_qqcRmtzT0fNjKK-g";
+        String googleApiKey = null;
 
         System.out.printf("Digite o nome de um livro: ");
         var searchBook = lecture.nextLine();
