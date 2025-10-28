@@ -1,5 +1,6 @@
 package com.felipecavassana.screenmatch.model;
 
+import com.felipecavassana.screenmatch.exception.ErroDeConversaoDeAnoException;
 import com.felipecavassana.screenmatch.model.record.TitleOMDB;
 
 public class Title implements Comparable<Title> {
@@ -17,6 +18,9 @@ public class Title implements Comparable<Title> {
 
     public Title(TitleOMDB titleOMDB) {
         this.name = titleOMDB.title();
+        if (titleOMDB.year().length() > 04){
+            throw new ErroDeConversaoDeAnoException("Ano não convertido");
+        }
         this.yearRelease = Integer.valueOf(titleOMDB.year());
         this.durationTimeMin = Integer.valueOf(titleOMDB.runtime().split(" ")[0]);
     }

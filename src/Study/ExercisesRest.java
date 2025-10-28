@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Scanner;
 
 public class ExercisesRest {
@@ -16,7 +17,8 @@ public class ExercisesRest {
 
         System.out.printf("Digite o nome de um livro: ");
         var searchBook = lecture.nextLine();
-        String urlApiGoogleBook = "https://www.googleapis.com/books/v1/volumes?q="+ searchBook +"&key="+ googleApiKey;
+        searchBook = URLEncoder.encode(searchBook);
+        String urlApiGoogleBook = "https://www.googleapis.com/books/v1/volumes?q="+ URLEncoder.encode(searchBook) +"&key="+ googleApiKey;
         String response1 = apiRest.getAPI(urlApiGoogleBook);
         System.out.println(response1);
 
@@ -28,7 +30,7 @@ public class ExercisesRest {
 
         System.out.printf("Digite o nome da receita para a busca: ");
         var nomeReceita = lecture.nextLine();
-        String urlTheMealDB = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + nomeReceita;
+        String urlTheMealDB = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + URLEncoder.encode(nomeReceita);
         String response3 = apiRest.getAPI(urlTheMealDB);
         System.out.println(response3);
 
