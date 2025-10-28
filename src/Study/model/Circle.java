@@ -1,6 +1,8 @@
-package Study;
+package Study.model;
 
-public class Circle implements Shape{
+import Study.Shape;
+
+public class Circle implements Shape {
     private double radius;
 
     public Circle(double radius) {

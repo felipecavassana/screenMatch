@@ -1,20 +1,20 @@
-package Study;
+package Study.model;
 
 public class Music {
-    String title;
-    String artist;
-    int yearRelease;
-    double ratingSum;
-    int totalRating;
+    public String title;
+    public String artist;
+    public int yearRelease;
+    public double ratingSum;
+    public int totalRating;
 
-    void showInfo(){
+    public void showInfo(){
         System.out.println("Music: "+ title);
         System.out.println("Artist: "+ artist);
         System.out.println("Year of release: "+ yearRelease);
         System.out.println("Rating: "+ calculateRatingMedia());
     }
 
-    void evaluateMusic(double rating){
+    public void evaluateMusic(double rating){
         ratingSum += rating;
         totalRating++;
     }

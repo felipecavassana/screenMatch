@@ -1,5 +1,7 @@
 package Study;
 
+import Study.model.NumerosPrimos;
+
 public class VerificadorPrimo extends NumerosPrimos {
 
     public void verificarSeEhPrimo(int numero) {

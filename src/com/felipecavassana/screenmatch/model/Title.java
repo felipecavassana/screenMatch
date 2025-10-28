@@ -1,5 +1,7 @@
 package com.felipecavassana.screenmatch.model;
 
+import com.felipecavassana.screenmatch.model.record.TitleOMDB;
+
 public class Title implements Comparable<Title> {
     private String name;
     private int yearRelease;
@@ -11,6 +13,12 @@ public class Title implements Comparable<Title> {
     public Title(String name, int yearRelease) {
         this.name = name;
         this.yearRelease = yearRelease;
+    }
+
+    public Title(TitleOMDB titleOMDB) {
+        this.name = titleOMDB.title();
+        this.yearRelease = Integer.valueOf(titleOMDB.year());
+        this.durationTimeMin = Integer.valueOf(titleOMDB.runtime().split(" ")[0]);
     }
 
     public String getName() {
@@ -72,5 +80,13 @@ public class Title implements Comparable<Title> {
     @Override
     public int compareTo(Title o) {
         return this.getName().compareTo(o.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "{name='" + name + '\'' +
+                ", yearRelease=" + yearRelease +
+                ", durationTimeMin=" + durationTimeMin +
+                '}';
     }
 }

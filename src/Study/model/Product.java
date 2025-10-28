@@ -1,6 +1,8 @@
-package Study;
+package Study.model;
 
-public class Product implements Calculavel{
+import Study.Calculavel;
+
+public class Product implements Calculavel {
     private String name;
     private double price;
     private int quantity;

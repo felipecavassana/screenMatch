@@ -1,6 +1,8 @@
-package Study;
+package Study.model;
 
-public class Square implements Shape{
+import Study.Shape;
+
+public class Square implements Shape {
     private double side;
 
     public Square(double side) {

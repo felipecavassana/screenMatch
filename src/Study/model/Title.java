@@ -1,4 +1,4 @@
-package Study;
+package Study.model;
 
 public class Title implements Comparable<Title>{
     private String name;

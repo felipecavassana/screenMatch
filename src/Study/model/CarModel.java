@@ -1,4 +1,4 @@
-package Study;
+package Study.model;
 
 public class CarModel extends Car{
     private int year;
@@ -20,7 +20,7 @@ public class CarModel extends Car{
         this.year = year;
     }
 
-    void showInfos() {
+    public void showInfos() {
         System.out.println("Model: " + super.getModel());
         System.out.println("Year: " + this.year);
         System.out.println("Color: " + this.color);
@@ -32,7 +32,7 @@ public class CarModel extends Car{
 
     }
 
-    int calculateTime() {
+    public int calculateTime() {
         return 2025 - this.year;
     }
 }

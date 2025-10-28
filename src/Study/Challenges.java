@@ -1,5 +1,7 @@
 package Study;
 
+import Study.model.*;
+
 import java.util.*;
 
 public class Challenges {

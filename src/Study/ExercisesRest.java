@@ -1,5 +1,10 @@
 package Study;
 
+import Study.record.Book;
+import Study.record.People;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -27,7 +32,22 @@ public class ExercisesRest {
         String response3 = apiRest.getAPI(urlTheMealDB);
         System.out.println(response3);
 
-
-
+        conversaoJsonParaObjeto();
+        conversaoJsonAninhadoParaObjeto();
     }
+
+    public static void conversaoJsonParaObjeto(){
+        String jsonPessoa = "{\"name\":\"Felipe\",\"age\":37,\"city\":\"Oxford\"}";
+        Gson gson = new GsonBuilder().setLenient().create();
+        People people = gson.fromJson(jsonPessoa, People.class);
+        System.out.println("Object People: " + people);
+    }
+
+    public static void conversaoJsonAninhadoParaObjeto() {
+        String jsonLivro = "{\"title\":\"Aventuras do Java\",\"author\":\"Akemi\",\"publisher\":{\"name\":\"TechBooks\",\"city\":\"São Paulo\"}}";
+        Gson gson = new Gson();
+        Book book = gson.fromJson(jsonLivro, Book.class);
+        System.out.println("Object Book: " + book);
+    }
+
 }

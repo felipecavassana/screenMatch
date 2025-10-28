@@ -1,5 +1,11 @@
 package com.felipecavassana.screenmatch.main;
 
+import com.felipecavassana.screenmatch.model.Title;
+import com.felipecavassana.screenmatch.model.record.TitleOMDB;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,6 +29,17 @@ public class MainSearch {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+        TitleOMDB titleOMDB = gson.fromJson(json, TitleOMDB.class);
+        System.out.println(titleOMDB.toString());
+
+        Title myTitle = new Title(titleOMDB);
+        System.out.println(myTitle);
+
     }
 }

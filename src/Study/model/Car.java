@@ -1,4 +1,4 @@
-package Study;
+package Study.model;
 
 public class Car {
     private String model;
